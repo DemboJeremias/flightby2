@@ -25,4 +25,3 @@
     <li><a href="about.html">Basket</a></li>
 
 </ul>
-© 2018 GitHub, Inc.

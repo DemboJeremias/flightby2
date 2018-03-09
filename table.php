@@ -1,16 +1,11 @@
-<!DOCTYPE HTML>
 
 <?php session_start();?>
+<?php require_once ('./include/header.php');?>
 <?php require_once ('./model/classes.php'); ?>
 <?php require_once('./database/DB_connection.php'); ?>
 <?php require_once('./controller/getflight.php'); ?>
 
 
-
-
-<head>
-</head>
-<body>
 
 <table>
     <thead>
@@ -31,5 +26,5 @@
     </tbody>
 </table>
 
-</body>
-</html>
+
+<?php require_once ('./include/_footer.php');?>
