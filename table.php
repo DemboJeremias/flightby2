@@ -19,8 +19,8 @@
     <?php foreach ($result as $item): ?>
     <tr>
         <td><?=$item->flight_id;?></td>
-        <td> </td>
-        <td> </td>
+        <td><?=$item->departure;?></td>
+
     </tr>
 <?php endforeach;?>
     </tbody>
