@@ -45,7 +45,7 @@
             return $this ->Read($query, $class);
         }
 
-    function  GetDepurture(){
+    function  GetDeparture(){
         $query = "SELECT departure.departure, destination.city,destination.time FROM departure, flight, destination";
         $class = 'departure';
         return $this ->Read($query, $class);

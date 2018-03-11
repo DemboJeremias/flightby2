@@ -20,9 +20,9 @@
             }
         }
         function Read ($_query, $_class, array  $_parameters = null){
-            $staement = $this->pdo->prepare($_query);
-            $staement ->execute($_parameters);
-            return $staement->fetchAll(PDO::FETCH_CLASS, $_class);
+            $statement = $this->pdo->prepare($_query);
+            $statement ->execute($_parameters);
+            return $statement->fetchAll(PDO::FETCH_CLASS, $_class);
         }
 
         function Update($_query, array $_parameters){

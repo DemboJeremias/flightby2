@@ -1,6 +1,7 @@
 <?php
 
-$result = $DBQuery->GetFlight();
+$result = $DBQuery->GetFlight() + $DBQuery->GetDeparture();
+
 var_dump($result);
 
 
@@ -15,6 +16,7 @@ var_dump($result);
 ////        $statement->execute();
 ////        $result = $statement->fetchAll(PDO::FETCH_OBJ);
 ////
+///
 ////?>
 
 <?php

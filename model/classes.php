@@ -7,6 +7,7 @@ class flight
     private $time;
     private $fk_destination_id;
     private $duration;
+    private $departure;
 
 
     function __get($name) {
@@ -96,7 +97,7 @@ class departure
 {
     private $departure_id;
     private $departure;
-
+private $flight_id;
     function __get($name) {
         return $this->$name;
     }
