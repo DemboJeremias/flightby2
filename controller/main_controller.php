@@ -1,17 +1,13 @@
 <?php
 
 
-if(!isset($error)){
-    $error ="";
+$accessBooking = [];
+
+
+if ($_POST['iCode'] == "addBasket") {
+    addBasket($_POST['bId']);
+} elseif ($_POST['iCode'] == "removeBasket") {
+    removeBasket($_POST["bId"]);
 }
-if(!isset($message)){
-    $message = "";
-}
-
-if (isset($_SESSION["flight"]) && $_SESSION["basket"]){
-
-
-}
-
 
 ?>
