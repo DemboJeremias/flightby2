@@ -46,6 +46,14 @@
         $class = 'departure';
         return $this ->Read($query, $class);
     }
+// the function that allow to add ticket in the basket
+    function addBasket($_id) {
+        if (!isset($_SESSION["basket"])) {
+            $_SESSION["basket"] = array();
+        }
+        array_push($_SESSION["basket"], $_id);
+
+    }
 
     }
 ?>
