@@ -3,11 +3,8 @@
 class flight
 {
     private $flight_id;
-    private $date;
-    private $time;
     private $fk_destination_id;
-    private $duration;
-    private $departure;
+    private $fk_departure_id;
 
 
     function __get($name) {
@@ -21,13 +18,8 @@ class flight
 
 class Booking
 {
-    private $id;
-    private $booking_from;
-    private $booking_to;
-    private $departure_time;
-    private $arrived_time;
-    private $duration;
-
+    private $booking_id;
+    private $fk_customer_id;
 
     function __get($name) {
         return $this->$name;
@@ -66,7 +58,8 @@ class destination
     private $destination_id;
     private $country;
     private $city;
-
+    private $type;
+    private $time;
 
 
     function __get($name) {
@@ -80,8 +73,9 @@ class destination
 
 class booking_flight
 {
-    private $booking_id;
-    private $flight;
+    private $booking_flight_id;
+    private $fk_booking_id;
+    private $fk_flight_id;
 
 
     function __get($name) {
@@ -97,7 +91,8 @@ class departure
 {
     private $departure_id;
     private $departure;
-private $flight_id;
+    private $Glasgow;
+
     function __get($name) {
         return $this->$name;
     }

@@ -1,4 +1,4 @@
 <?php
 
 $result = $DBQuery->GetDepurture();
-var_dump($result);
+//var_dump($result);
