@@ -18,10 +18,10 @@
 <body>
 <ul class="nav">
     <div class="logo"><a href="flyguysHome.html">FLY-GUYS</a></div>
-    <li><a href="index.html">Sign Up</a></li>
-    <li><a href="about.html">Log in</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="lala.html">Destinations</a></li>
-    <li><a href="about.html">Basket</a></li>
+    <li><a href="home.php">Sign Up</a></li>
+    <li><a href="login.php">Log in</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="lala.php">Destinations</a></li>
+    <li><a href="basket.php">Basket</a></li>
 
 </ul>

@@ -28,7 +28,7 @@ $brussels = "Brussels";
 
 
 <div class="banner">
-    <img class="banner-image" src="fly-mo.jpg">
+    <img class="banner-image" src="image/fly-mo.jpg">
 
 </div>
 
