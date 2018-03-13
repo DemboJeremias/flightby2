@@ -57,7 +57,7 @@
 
 
 
-        function GetDepatureThroughName($rez)
+        function GetDepartureThroughName($rez)
         {
             $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination WHERE destination.city = \"$rez\"";
             $class = 'departure';

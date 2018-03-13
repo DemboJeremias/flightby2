@@ -6,7 +6,7 @@
 <?php require('./controller/getflight.php');
 
 $rez = $_POST['dest'];
-$result = $DBQuery->GetDepatureThroughName($rez);
+$result = $DBQuery->GetDepartureThroughName($rez);
 
 ?>
 
