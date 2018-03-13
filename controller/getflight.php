@@ -1,8 +1,9 @@
 <?php
 
-$result = $DBQuery->GetFlight() + $DBQuery->GetDeparture();
+$result = $DBQuery->GetDeparture();
 
-var_dump($result);
+
+//var_dump($result);
 
 
 

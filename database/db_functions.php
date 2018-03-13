@@ -45,6 +45,7 @@
     }
 
 //          Get data from database
+<<<<<<< HEAD
     function GetFlight()
     {
         $query = "SELECT flight_id, fk_departure_id, fk_destination_id FROM flight";
@@ -55,6 +56,12 @@
     function GetDeparture()
     {
         $query = "SELECT departure.departure, destination.city,destination.time FROM departure, flight, destination";
+=======
+
+
+    function  GetDeparture(){
+        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination";
+>>>>>>> ac13d2aec8ac34434265269036a7dd175669d34e
         $class = 'departure';
         return $this->Read($query, $class);
     }
