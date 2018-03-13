@@ -91,16 +91,9 @@ class departure
 {
     private $departure_id;
     private $departure;
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-    private $flight_id;
 
-=======
-    private $Glasgow;
->>>>>>> ac13d2aec8ac34434265269036a7dd175669d34e
->>>>>>> 0880b6f58e646ab3db41391fee98464bc40eb9b0
+
 
     function __get($name) {
         return $this->$name;

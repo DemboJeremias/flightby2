@@ -45,7 +45,7 @@
     }
 
 //          Get data from database
-<<<<<<< HEAD
+
     function GetFlight()
     {
         $query = "SELECT flight_id, fk_departure_id, fk_destination_id FROM flight";
@@ -53,36 +53,36 @@
         return $this->Read($query, $class);
     }
 
-    function GetDeparture()
-    {
-        $query = "SELECT departure.departure, destination.city,destination.time FROM departure, flight, destination";
-=======
 
-    function GetDepatureThroughName($rez)
-    {
-        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination WHERE destination.city = \"$rez\"";
-        $class = 'departure';
-        return $this ->Read($query, $class);
-    }
 
-    function  GetDeparture(){
-        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination";
->>>>>>> ac13d2aec8ac34434265269036a7dd175669d34e
-        $class = 'departure';
-        return $this->Read($query, $class);
-    }
+
+
+        function GetDepatureThroughName($rez)
+        {
+            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination WHERE destination.city = \"$rez\"";
+            $class = 'departure';
+            return $this->Read($query, $class);
+        }
+
+        function GetDeparture()
+        {
+            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination";
+
+            $class = 'departure';
+            return $this->Read($query, $class);
+        }
 
 
 // the function that allow to add ticket in the basket
-    function addBasket($_Addid)
-    {
-        if (!isset($_SESSION["basket"])) {
-            $_SESSION["basket"] = array();
+        function addBasket($_Addid)
+        {
+            if (!isset($_SESSION["basket"])) {
+                $_SESSION["basket"] = array();
+            }
+            array_push($_SESSION["basket"], $_Addid);
+
         }
-        array_push($_SESSION["basket"], $_Addid);
+
 
     }
-
-
-}
 ?>
