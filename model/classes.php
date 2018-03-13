@@ -91,7 +91,7 @@ class departure
 {
     private $departure_id;
     private $departure;
-    private $Glasgow;
+
 
     function __get($name) {
         return $this->$name;

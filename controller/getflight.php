@@ -1,6 +1,6 @@
 <?php
 
-$result = $DBQuery->GetDeparture();
+//$result = $DBQuery->GetDepatureThroughName();
 
 
 //var_dump($result);

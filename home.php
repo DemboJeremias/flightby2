@@ -33,16 +33,16 @@ $brussels = "Brussels";
 </div>
 
 <div class="booking">
-    <form  action="table.php" method="get">
+    <form  action="table.php" method="post">
         <h2 id="title">Search for a flight</h2>
         <label class="DepLabel">Departure</label>
-        <select id="flight-from" name="Flight from">
+        <!--<select id="flight-from" name="Flight from">
             <option value="Stansted">Stansted</option>
-        </select>
+        </select>-->
 
 
         <label class="DestLabel">Destination</label>
-        <select id="flight-to" name="flight to">
+        <select name="dest">
 
             <option value=<?=$glasgow?>><?=$glasgow?></option>
             <option value=<?=$dublin?>><?=$dublin?></option>
@@ -52,7 +52,7 @@ $brussels = "Brussels";
         </select>
 
 
-        <label class="DepDateLab">Departing Date</label> <input type="text" id="departing">
+        <!--<label class="DepDateLab">Departing Date</label> <input type="text" id="departing">-->
         <input  id="search" type="submit" value="Search">
 </div>
 </form>

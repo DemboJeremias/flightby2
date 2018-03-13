@@ -3,11 +3,11 @@
 <?php require_once ('./include/header.php');?>
 <?php require_once ('./model/classes.php'); ?>
 <?php require_once('./database/DB_connection.php'); ?>
-<?php require_once('./controller/getflight.php'); ?>
-<?php
-function add(){
+<?php require('./controller/getflight.php');
 
-}
+$rez = $_POST['dest'];
+$result = $DBQuery->GetDepatureThroughName($rez);
+
 ?>
 
 
@@ -21,6 +21,7 @@ function add(){
     </tr>
     </thead>
     <tbody>
+
 
     <?php foreach ($result as $item): ?>
 
