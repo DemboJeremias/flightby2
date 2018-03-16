@@ -5,8 +5,8 @@
 <?php require_once('./database/DB_connection.php'); ?>
 <?php require('./controller/getflight.php');
 
-$rez = $_POST['dest'];
-$result = $DBQuery->GetDepartureThroughName($rez);
+//$rez = $_POST['dest'];
+//$result = $DBQuery->GetDepartureThroughName($rez);
 
 ?>
 
@@ -24,15 +24,16 @@ $result = $DBQuery->GetDepartureThroughName($rez);
 
 
     <?php foreach ($result as $item): ?>
-
-    <tr>
-        <form method="post" action=""  target="POPUPW"
+    <tr>S
+        <form  method="post" action="basket.php"  target="POPUPW"
               onsubmit="POPUPW = window.open('about:blank','POPUPW',
    'width=600,height=400');">
         <td><?=$item->departure;?></td>
         <td><?=$item->time;?></td>
-        <td><?=$item->city;?> <input type="submit" value="add to basket" style="margin-left: 20px"></td>
-
+        <td><?=$item->city;?> </td>
+            <input type="hidden" name="id" value="<?= $item->flight_id ?>">
+            <td><input name="basket" type="submit" value="add to basket"></td>
+         <?php $flightID = $item->flight_id ?>
         </form>
     </tr>
 
