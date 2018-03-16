@@ -26,10 +26,12 @@ $result = $DBQuery->GetDepartureThroughName($rez);
     <?php foreach ($result as $item): ?>
 
     <tr>
-        <form method="post" action="">
+        <form method="post" action=""  target="POPUPW"
+              onsubmit="POPUPW = window.open('about:blank','POPUPW',
+   'width=600,height=400');">
         <td><?=$item->departure;?></td>
         <td><?=$item->time;?></td>
-        <td><?=$item->city;?> <input type="submit" value="add to basket"></td>
+        <td><?=$item->city;?> <input type="submit" value="add to basket" style="margin-left: 20px"></td>
 
         </form>
     </tr>
