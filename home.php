@@ -5,6 +5,10 @@ $dublin = "Dublin";
 $paris = "Paris";
 $madrid = "Madrid";
 $brussels = "Brussels";
+//converting the date to day of the work
+$dt = strtotime('03/15/2018');
+$day = date("l", $dt);
+echo $day;
 
 ?>
 

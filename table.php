@@ -24,7 +24,7 @@
 
 
     <?php foreach ($result as $item): ?>
-    <tr>S
+    <tr>
         <form  method="post" action="basket.php"  target="POPUPW"
               onsubmit="POPUPW = window.open('about:blank','POPUPW',
    'width=600,height=400');">
