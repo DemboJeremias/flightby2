@@ -1,3 +1,6 @@
 <?php
-$basketItem = $_POST['basket'];
-$result = $DBQuery->addBasket($basketItem);
+$value = $_POST['id'];
+$DBQuery->addBasket($value);
+
+// loop through session basket
+    // get all flights by id
