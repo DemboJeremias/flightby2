@@ -53,7 +53,13 @@
         return $this->Read($query, $class);
     }
 
-
+    function GetFlightById($id)
+    {
+        $query = "SELECT flight_id, fk_departure_id, fk_destination_id FROM flight WHERE flight_id = ?";
+        $parameters = [$id];
+        $class = 'flight';
+        return $this->Read($query, $class, $parameters);
+    }
 
 
 
