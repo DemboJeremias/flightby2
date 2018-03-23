@@ -5,11 +5,12 @@ $dublin = "Dublin";
 $paris = "Paris";
 $madrid = "Madrid";
 $brussels = "Brussels";
-$date = "Date";
+$date = strtotime('03/15/2018');
+//$DoW = "day";
 //converting the date to day of the work
-$dt = strtotime('03/15/2018');
-$day = date("l", $dt);
-echo $day;
+//$dt = strtotime('03/15/2018');
+//$DoW = date("l", $date);
+
 
 ?>
 
@@ -26,7 +27,7 @@ echo $day;
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script src='flyGuys.js'></script>
+
 
 
 </head>
@@ -57,10 +58,12 @@ echo $day;
         </select>
 
 
-        <label class="DepDateLab">Departing Date</label> <input type="text" id="departing">
-        <select name ="day">
-            <option value=<?=$date?>><?=$date?></option>
-        </select>
+        <label class="DepDateLab">Departing Date</label>
+        <input value=<?=$date?> type="date" id="departing">
+
+        <label class="DoW">Day</label>
+        <input value=<?=$DoW = date("l", $date)?> type="date" id="departing">
+
 
 <!--        <label class="Weekday">Day</label> <input type="text">-->
 
