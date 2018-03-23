@@ -1,8 +1,8 @@
 <?php
 
 //$result = $DBQuery->GetDepatureThroughName();
-$rez = $_POST['dest'];
-$result = $DBQuery->GetDepartureThroughName($rez);
+$destin = $_POST['dest'];
+$result = $DBQuery->GetDepartureThroughName($destin);
 
 //var_dump($result);
 

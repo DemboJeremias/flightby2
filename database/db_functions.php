@@ -54,20 +54,19 @@
     }
 
     function GetFlightById($id)
-    {
+    {   $parameters = [$id];
         $query = "SELECT flight_id, fk_departure_id, fk_destination_id FROM flight WHERE flight_id = ?";
-        $parameters = [$id];
         $class = 'flight';
         return $this->Read($query, $class, $parameters);
     }
 
 
 
-        function GetDepartureThroughName($rez)
-        {
-            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination WHERE destination.city = \"$rez\"";
+        function GetDepartureThroughName($destin)
+        {   $parameters = [$destin];
+            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination WHERE destination.city = ?";
             $class = 'departure';
-            return $this->Read($query, $class);
+            return $this->Read($query, $class, $parameters);
         }
 
         function GetDeparture()
