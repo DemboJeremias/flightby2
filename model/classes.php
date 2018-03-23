@@ -60,6 +60,7 @@ class destination
     private $city;
     private $type;
     private $time;
+    private $date;
 
 
     function __get($name) {

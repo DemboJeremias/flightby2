@@ -64,27 +64,28 @@
 
         function GetDepartureThroughName($destin)
         {   $parameters = [$destin];
-            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination WHERE destination.city = ?";
+            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM departure, flight, destination WHERE destination.city = ?";
+
             $class = 'departure';
             return $this->Read($query, $class, $parameters);
         }
 
-        function GetDeparture()
-        {
-            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination";
-
-            $class = 'departure';
-            return $this->Read($query, $class);
-        }
+//        function GetDeparture()
+//        {
+//            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination";
+//
+//            $class = 'departure';
+//            return $this->Read($query, $class);
+//        }
 
 
 // the function that allow to add ticket in the basket
-        function addBasket($_Addid)
+        function addBasket($flight_id)
         {
             if (!isset($_SESSION["basket"])) {
                 $_SESSION["basket"] = array();
             }
-            array_push($_SESSION["basket"], $_Addid);
+            array_push($_SESSION["basket"], $flight_id);
 
         }
 

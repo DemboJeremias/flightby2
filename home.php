@@ -5,6 +5,7 @@ $dublin = "Dublin";
 $paris = "Paris";
 $madrid = "Madrid";
 $brussels = "Brussels";
+$date = "Date";
 //converting the date to day of the work
 $dt = strtotime('03/15/2018');
 $day = date("l", $dt);
@@ -57,6 +58,12 @@ echo $day;
 
 
         <label class="DepDateLab">Departing Date</label> <input type="text" id="departing">
+        <select name ="day">
+            <option value=<?=$date?>><?=$date?></option>
+        </select>
+
+<!--        <label class="Weekday">Day</label> <input type="text">-->
+
         <input  id="search" type="submit" value="Search">
 </div>
 </form>
