@@ -2,7 +2,8 @@
 
 //$result = $DBQuery->GetDepatureThroughName();
 $destin = $_POST['dest'];
-$result = $DBQuery->GetDepartureThroughName($destin);
+$date = $_POST['date'];
+$result = $DBQuery->GetDepAndDate($destin,$date);
 
 //var_dump($result);
 

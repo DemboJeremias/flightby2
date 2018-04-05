@@ -18,6 +18,7 @@
         <th>Departure</th>
         <th>Time</th>
         <th>Destination</th>
+        <th>Date</th>
     </tr>
     </thead>
     <tbody>
@@ -31,6 +32,7 @@
         <td><?=$item->departure;?></td>
         <td><?=$item->time;?></td>
         <td><?=$item->city;?> </td>
+            <td><?=$item->date;?></td>
             <input type="hidden" name="id" value="<?= $item->flight_id ?>">
             <td><input name="basket" type="submit" value="add to basket"></td>
          <?php $flightID = $item->flight_id ?>
