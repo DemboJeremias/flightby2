@@ -23,7 +23,7 @@
     }
 
 //           Update Queries
-    function UpdateLecture($_id, $_value)
+    function UpdateBooking($_id, $_value)
     {
         $query = "   UPDATE attend SET lecture_id =? WHERE attend_id =?";
         $parameters = [
@@ -34,7 +34,7 @@
     }
 
 //           Delete Queries
-    function DeleteAttendance($_id)
+    function DeleteBooking($_id)
     {
         $query = "DELETE FROM attend WHERE attend_id =?";
         $parameters = [
