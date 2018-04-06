@@ -16,10 +16,10 @@
                 <br><br>
                 <input type="submit" value="Login">
                 <br><br>
-                <p>Not got an account? Register <a href="sign_up.php">HERE</a> </p>
-                <p>Forgotten your password <a href="forgot.php">Click HERE</a> to reset</p>
+                <p> Register <a href="register.php">Click Here</a> </p>
+                <p>Forgotten password <a href="forgot.php">Click Here</a></p>
             </form>
-        </div>
+
     </div
 
 
