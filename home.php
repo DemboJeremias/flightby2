@@ -5,6 +5,7 @@ $dublin = "Dublin";
 $paris = "Paris";
 $madrid = "Madrid";
 $brussels = "Brussels";
+$date1= time('03/04/2018');
 $date = strtotime('03/15/2018');
 //$DoW = "day";
 //converting the date to day of the work
@@ -21,11 +22,10 @@ $date = strtotime('03/15/2018');
     <meta name="author" content="fligts">
     <title>FlyGuys</title>
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     <link rel="stylesheet" href="style/style.css">
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 
 
@@ -59,10 +59,11 @@ $date = strtotime('03/15/2018');
 
 
         <label class="DepDateLab">Departing Date</label>
-        <input value=<?=$date?> type="date" id="departing">
+        <input name="date" value=<?=$date1?> type="date" >
 
         <label class="DoW">Day</label>
-        <input value=<?=$DoW = date("l", $date)?> type="date" id="departing">
+
+        <input value=<?=$DoW = date("l", $date)?> type="date" id="Departing">
 
 
 <!--        <label class="Weekday">Day</label> <input type="text">-->

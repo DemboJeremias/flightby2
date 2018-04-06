@@ -62,9 +62,9 @@
 
 
 
-        function GetDepartureThroughName($destin)
-        {   $parameters = [$destin];
-            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM departure, flight, destination WHERE destination.city = ?";
+        function GetDepAndDate($destin,$date)
+        {   $parameters = [$destin,$date];
+            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM departure, flight, destination WHERE destination.city = ? AND destination.date = ?";
 
             $class = 'departure';
             return $this->Read($query, $class, $parameters);

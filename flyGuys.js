@@ -1,5 +1,5 @@
 
-$( function() {
+/*$( function() {
     $( "#departing" ).datepicker();
 
 } );
@@ -8,3 +8,4 @@ $( function() {
 
 } );
 
+*/
