@@ -70,6 +70,13 @@
             return $this->Read($query, $class, $parameters);
         }
 
+    function GetDetailByID($f_ID)
+    {   $parameters = [$f_ID];
+        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM departure, flight, destination WHERE flight.flight_id = ?";
+
+        //$class = 'flight';
+        return $this->Read2($query, $parameters);
+    }
 //        function GetDeparture()
 //        {
 //            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination";

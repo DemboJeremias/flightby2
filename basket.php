@@ -21,12 +21,19 @@ require_once 'controller\submitBasket.php';
 
 
         <?php foreach ($_SESSION['basket'] as $item): ?>
-            <tr>
+            <?php foreach ($res2 as $item2): ?>
+                <tr>
 
-                    <td><?=$item?></td>
+                        <td><?=$item2->departure;?></td>
+                        <td><?=$item2->time;?></td>
+                        <td><?=$item2->city;?> </td>
+                        <td><?=$item2->date;?></td>
+
+                </tr>
 
 
-            </tr>
+            <?php endforeach;?>
+
 
 
         <?php endforeach;?>
