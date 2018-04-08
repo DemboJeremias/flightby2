@@ -25,11 +25,6 @@ $date = strtotime('03/15/2018');
 
     <link rel="stylesheet" href="style/style.css">
 
-
-
-
-
-
 </head>
 
 
