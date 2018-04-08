@@ -124,10 +124,10 @@
         return $this->Read($query, $class, $parameters);
     }
 
-    function GetFlightByDate($date)
+    function GetFlightByDate($date = null)
     {
         //$parameters = [$date];
-        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND destination.date > NOW() ORDER BY destination.date ASC";
+        $query = "SELECT flight.flight_id, departure.departure, destination.city, destination.type, destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND destination.date > NOW() ORDER BY destination.date ASC";
         $class = 'destination';
         return $this->Read($query, $class);
     }
