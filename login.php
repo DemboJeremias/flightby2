@@ -10,7 +10,7 @@
 
 <?php if (!isset($_SESSION['userID'])): ?>
     <div class="col-lg-15 col-m12">
-            <h2>Login to Your Account </h2>
+            <h2 id="title">Login to Your Account </h2>
             <form method="post" action="login.php">
                 <label>Email:</label>
                 <br>

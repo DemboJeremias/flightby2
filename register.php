@@ -10,7 +10,7 @@
 
 <?php if (!isset($_SESSION['userID'])): ?>
 <div class="col-lg-12 col-m-12">
-        <h2>Register</h2>
+        <h2 id="title">Register</h2>
         <form method="post" action="register.php">
             <label>First Name:</label>
             <br>
