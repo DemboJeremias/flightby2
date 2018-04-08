@@ -54,48 +54,50 @@
     }
 
     function GetFlightById($id)
-    {   $parameters = [$id];
+    {
+        $parameters = [$id];
         $query = "SELECT flight_id, fk_departure_id, fk_destination_id FROM flight WHERE flight_id = ?";
         $class = 'flight';
         return $this->Read($query, $class, $parameters);
     }
 
 
-
-        function GetDepAndDate($destin,$date)
-        {   $parameters = [$destin,$date];
-            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM departure, flight, destination WHERE destination.city = ? AND destination.date = ?";
-
-            $class = 'departure';
-            return $this->Read($query, $class, $parameters);
-        }
-
-    function GetDetailByID($f_ID)
-    {   $parameters = [$f_ID];
-        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM departure, flight, destination WHERE flight.flight_id = ?";
-
-        //$class = 'flight';
-        return $this->Read2($query, $parameters);
+    function GetDepAndDate($destin, $date)
+    {
+        $parameters = [$destin, $date];
+        $query = "SELECT flight.flight_id, departure.departure, destination.city, destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND destination.city = ? AND destination.date = ?";
+        $class = 'departure';
+        return $this->Read($query, $class, $parameters);
     }
-//        function GetDeparture()
-//        {
-//            $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time FROM departure, flight, destination";
-//
-//            $class = 'departure';
-//            return $this->Read($query, $class);
-//        }
 
 
 // the function that allow to add ticket in the basket
-        function addBasket($flight_id)
-        {
-            if (!isset($_SESSION["basket"])) {
-                $_SESSION["basket"] = array();
-            }
-            array_push($_SESSION["basket"], $flight_id);
-
+    function addBasket($flight_id)
+    {
+        if (!isset($_SESSION["basket"])) {
+            $_SESSION["basket"] = array();
         }
-
-
+        array_push($_SESSION["basket"], $flight_id);
     }
+
+    function GetFlightByDestination($destin)
+    {
+        $parameters = [$destin];
+        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND destination.city = ?";
+        $class = 'destination';
+        return $this->Read($query, $class, $parameters);
+    }
+
+    function GetFlightByDate($date)
+    {
+        $parameters = [$date];
+        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND destination.date > NOW()";
+        $class = 'destination';
+        return $this->Read($query, $class, $parameters);
+    }
+
+
+
+
+}
 ?>

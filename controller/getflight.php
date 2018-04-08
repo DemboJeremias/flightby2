@@ -3,7 +3,17 @@
 //$result = $DBQuery->GetDepatureThroughName();
 $destin = $_POST['dest'];
 $date = $_POST['date'];
-$result = $DBQuery->GetDepAndDate($destin,$date);
+if($date != null){
+    $result = $DBQuery->GetDepAndDate($destin,$date);
+}else{
+    if($destin != null){
+     $result = $DBQuery->GetFlightByDestination($destin);
+
+    }else{
+     $result = $DBQuery->GetFlightByDate($date);
+    }
+}
+
 
 //var_dump($result);
 

@@ -5,6 +5,7 @@ $dublin = "Dublin";
 $paris = "Paris";
 $madrid = "Madrid";
 $brussels = "Brussels";
+$manchester = "Manchester";
 $date1= time('03/04/2018');
 $date = strtotime('03/15/2018');
 //$DoW = "day";
@@ -55,6 +56,7 @@ $date = strtotime('03/15/2018');
             <option value=<?=$paris?>><?=$paris?></option>
             <option value=<?=$madrid?>><?=$madrid?></option>
             <option value=<?=$brussels?>><?=$brussels?></option>
+            <option value=<?=$manchester?>><?=$manchester?></option>
         </select>
 
 
