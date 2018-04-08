@@ -1,7 +1,5 @@
 <?php
 
-
-
 $allowed = false;
 if (!isset($_SESSION['access'])) {
     header("location: index.php");

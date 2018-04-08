@@ -1,9 +1,11 @@
-<?php require_once 'include\header.php';
+<?php
+require_once ('include/header.php');
 
-require_once 'database\DB_connection.php';
-require_once 'database\db_functions.php';
-require_once 'controller\submitBasket.php';
+require_once 'controller/submitBasket.php';
 ?>
+
+
+
 
     <table>
             <thead>
@@ -11,40 +13,30 @@ require_once 'controller\submitBasket.php';
                 <th>Departure</th>
                 <th>Time</th>
                 <th>Destination</th>
+                    <th>Date</th>
                 </tr>
             </thead>
 
             <tbody>
 
 
-        <?php foreach ($_SESSION['basket'] as $item): ?>
-            <?php foreach ($res2 as $item2): ?>
+        <?php foreach ($basket as $item): ?>
+
                 <tr>
 
-                        <td><?=$item2->departure;?></td>
-                        <td><?=$item2->time;?></td>
-                        <td><?=$item2->city;?> </td>
-                        <td><?=$item2->date;?></td>
+                        <td><?= $item[0]->departure ?></td>
+                        <td><?= $item[0]->time ?></td>
+                        <td><?= $item[0]->city ?> </td>
+                        <td><?= $item[0]->date ?></td>
 
                 </tr>
 
 
-            <?php endforeach;?>
+
 
 
 
         <?php endforeach;?>
-
-
-        </tbody>
-
-
-               <?php foreach ($_SESSION['basket'] as $item): ?>
-                 <tr>
-                    <td><?=$item?></td>
-                 </tr>
-              <?php endforeach;?>
-            </tbody>
 
     </table>
 

@@ -45,7 +45,6 @@
     }
 
 //          Get data from database
-
     function GetFlight()
     {
         $query = "SELECT flight_id, fk_departure_id, fk_destination_id FROM flight";
@@ -60,7 +59,6 @@
         $class = 'flight';
         return $this->Read($query, $class, $parameters);
     }
-
 
     function GetDepAndDate($destin, $date)
     {
@@ -118,16 +116,21 @@
         return $this->Read($query, $class, $parameters);
     }
 
-    function GetFlightByDate($date)
+    function GetDestinationByID($id)
     {
-        $parameters = [$date];
-        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND destination.date > NOW()";
+        $parameters = [$id];
+        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND flight.flight_id = ?";
         $class = 'destination';
         return $this->Read($query, $class, $parameters);
     }
 
-
-
+    function GetFlightByDate($date)
+    {
+        //$parameters = [$date];
+        $query = "SELECT flight.flight_id, departure.departure, destination.city,destination.time, destination.date FROM flight, departure, destination WHERE flight.fk_destination_id = destination.destination_id AND flight.fk_departure_id = departure.departure_id AND destination.date > NOW() ORDER BY destination.date ASC";
+        $class = 'destination';
+        return $this->Read($query, $class);
+    }
 
 }
 ?>
