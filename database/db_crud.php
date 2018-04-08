@@ -24,17 +24,6 @@
             $statement ->execute($_parameters);
             return $statement->fetchAll(PDO::FETCH_CLASS, $_class);
         }
-    function Read2 ($_query, array  $_parameters = null){
-        $statement = $this->pdo->prepare($_query);
-        $statement ->execute($_parameters);
-        return $statement->fetchAll(PDO::FETCH_CLASS);
-    }
-
-
-
-
-
-
         function Update($_query, array $_parameters){
             $statement = $this->pdo->prepare($_query);
             return $statement->execute($_parameters);
