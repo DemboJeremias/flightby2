@@ -132,5 +132,66 @@
         return $this->Read($query, $class);
     }
 
+    function GetAllDestinations() {
+        $query = "SELECT destination.city FROM destination GROUP BY destination.city ORDER BY destination.city ASC";
+        $class = 'destination';
+        return $this->Read($query, $class);
+    }
+
+    function GetAllCountries() {
+        $query = "SELECT destination.country FROM destination GROUP BY destination.country ORDER BY destination.country ASC";
+        $class = 'destination';
+        return $this->Read($query, $class);
+    }
+
+    function GetAllFlightDetailsByID($id) {
+        $query = "SELECT flight.flight_id, departure.departure, destination.destination_id, destination.country, destination.city, destination.type, destination.time, destination.date FROM destination, flight, departure WHERE flight.flight_id = ? AND flight.fk_departure_id = departure.departure_id AND flight.fk_destination_id = destination.destination_id";
+        $class = 'destination';
+        $parameters = [$id];
+        return $this->Read($query, $class, $parameters);
+    }
+
+    function GetAllDepartures() {
+        $query = "SELECT departure.departure_id, departure.departure FROM departure GROUP BY departure.departure ORDER BY departure.departure ASC";
+        $class = 'departure';
+        return $this->Read($query, $class);
+    }
+
+    function AddNewFlight($country, $city, $type, $time, $date, $depart) {
+        $query1 = "INSERT INTO destination (country, city, type, time, date) VALUES (?,?,?,?,?)";
+        $parameters1 = [$country, $city, $type, $time, $date];
+        $id = $this->Create($query1, $parameters1);
+
+        $query2 = "INSERT INTO flight (fk_departure_id, fk_destination_id) VALUES (?,?)";
+        $parameters2 = [$depart, $id];
+        return $this->Create($query2, $parameters2);
+    }
+
+    function UpdateFlightDetailsByID($id, $country, $city, $type, $time, $date) {
+        $query = "UPDATE destination SET country =?, city = ?, type = ?, time = ?, date = ? WHERE destination_id =?";
+        $parameters = [$country, $city, $type, $time, $date, $id];
+        return $this->Update($query, $parameters);
+    }
+
+    function GetDestinationIDFromFlightID($id) {
+        $query = "SELECT fk_destination_id FROM flight WHERE flight_id = ?";
+        $parameters = [$id];
+        $class = 'flight';
+        return $this->Read($query, $class, $parameters);
+    }
+
+    function DeleteFlightByID($id) {
+        $dest_id = $this->GetDestinationIDFromFlightID($id);
+        $query = "DELETE FROM flight WHERE flight_id = ?";
+        $parameters = [$id];
+        $result = $this->Delete($query, $parameters);
+
+        $query2 = "DELETE FROM destination WHERE destination_id = ?";
+        $parameters2 = [$id];
+        $result2 = $this->Delete($query2, $parameters2);
+
+        return ($result && $result2);
+    }
 }
+
 ?>

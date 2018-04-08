@@ -22,10 +22,8 @@
         <input type="datet" name="expired"> </input>
         <label>Security Code</label>
         <input type="text" name="secury"> </input>
+
     </form>
-
-
-
 
 
 
