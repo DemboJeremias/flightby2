@@ -192,6 +192,28 @@
 
         return ($result && $result2);
     }
+
+    function updateRSS() {
+        global $readObject;
+        $query = $readObject->getFlight();
+        $rss = '<?xml version="1.0" encoding="utf-8"?>' . "\n";
+        $rss .= '<rss version="2.0">' . "\n";
+        $rss .= '<channel>' . "\n";
+        $rss .= '<title>Ten Flights </title>' . "\n";
+        $rss .= '<description>Update information for Available Ten Flight on Website</description>' . "\n";
+        foreach ($query as $f) {
+            $rss .= '<item>' . "\n";
+            $rss .= '<title>' . $f->flight_name . ' from ' . $f->country . ' </title>' . "\n";
+            $rss .= '<description>' . $f->description . '</description>' . "\n";
+            $rss .= '<link>http://mychaos.co.uk/awad/fligh.php?id=' . $f->flight_id . '</link>' . "\n";
+            $date = strtotime($f->date_added);
+            $rss .= '<pubDate>' . date('D, d M Y H:i:s O', $date) . '</pubDate>' . "\n";
+            $rss .= '</item>' . "\n";
+        }
+        $rss .= '</channel>' . "\n";
+        $rss .= '</rss>' . "\n";
+        return $rss;
+    }
 }
 
 ?>
