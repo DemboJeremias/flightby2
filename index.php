@@ -47,7 +47,7 @@
             </div>
             <div class="col-75">
                 <input id="dateInp" name="date" value=<?=$date1?> type="date" >
->>>>>>> 78deee25434ff3b54a47be068458a5e0e8ef20f2
+
 
             </div>
         </div>
