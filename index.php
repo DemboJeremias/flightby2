@@ -7,8 +7,9 @@
     <meta name="author" content="fligts">
     <title>FlyGuys</title>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style/style.css">
+    <script type="text/javascript" src="flyGuys.js"></script>
 
 </head>
 
@@ -56,6 +57,8 @@
             <input  id="search" type="submit" value="Search">
         </form>
     </div>
-
+            <div>
+                <br><a href="javascript:$('body').css({'zoom':parseFloat($('body').css('zoom'))+0.1})">Zoom in</a><br>
+                <br><a href="javascript:$('body').css({'zoom':parseFloat($('body').css('zoom'))-0.1})">Zoom out</a></div>
 <?php require_once 'include\_footer.php'; ?>
 
