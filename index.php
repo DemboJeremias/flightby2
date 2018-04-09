@@ -6,10 +6,10 @@
     <meta name="description" content="fly guys">
     <meta name="author" content="fligts">
     <title>FlyGuys</title>
-
+    <script type="text/javascript"
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAPfMpfzU7xd0yyeFOeK68Va6IsyyREUm0&libraries=geometry"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style/style.css">
-    <script type="text/javascript" src="flyGuys.js"></script>
 
 </head>
 
@@ -60,5 +60,14 @@
             <div>
                 <br><a href="javascript:$('body').css({'zoom':parseFloat($('body').css('zoom'))+0.1})">Zoom in</a><br>
                 <br><a href="javascript:$('body').css({'zoom':parseFloat($('body').css('zoom'))-0.1})">Zoom out</a></div>
+
+            <div id="map">
+
+
+
+
+            </div>
+
+
 <?php require_once 'include\_footer.php'; ?>
 
