@@ -3,7 +3,7 @@
 <div class="col-lg-15 col-m12">
 
     <h2 id="title"> Payment Details </h2>
-    <form>
+    <input>
         <label>Card Type</label>
         <select>
             <option value="visa">Visa</option>
@@ -22,7 +22,7 @@
         <input type="datet" name="expired"> </input>
         <label>Security Code</label>
         <input type="text" name="secury"> </input>
-
+        <input type="submit" name="payment"></input>
     </form>
 
 
