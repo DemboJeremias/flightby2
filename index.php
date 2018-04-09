@@ -8,8 +8,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
-
-
     <div class="banner">
         <img class="banner-image" src="image/fly-mo.jpg">
     </div>
