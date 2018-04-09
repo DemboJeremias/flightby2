@@ -33,6 +33,13 @@ body{
     color: black;
     
 }
+
+.logSub{
+
+    margin-left: 50%;
+}
+
+
 .logo{
     color:dimgrey;
     float: left;

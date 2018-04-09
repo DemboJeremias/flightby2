@@ -21,7 +21,7 @@
                 <input type="password" name="password" placeholder="Enter passsword here" id="password">
                 <br><br>
                 <input type="hidden" name="ref" value="login">
-                <input type="submit" value="Login">
+                <input  id="logSub" type="submit" value="Login">
                 <br><br>
                 <p> Register <a href="register.php">Click Here</a> </p>
 <!--                <p>Forgotten password <a href="forgot.php">Click Here</a></p>-->
