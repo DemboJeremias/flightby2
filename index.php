@@ -1,35 +1,10 @@
 <?php require_once 'include/header.php'; ?>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="fly guys">
-    <meta name="author" content="fligts">
-    <title>FlyGuys</title>
-    <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAPfMpfzU7xd0yyeFOeK68Va6IsyyREUm0&libraries=geometry"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style/style.css">
-
-</head>
-
+<?php require_once ('controller/home_controller.php'); ?>
 
 <div class="banner">
     <img class="banner-image" src="image/fly-mo.jpg">
 
 </div>
-<div class="booking">
-    <form  action="table.php" method="post">
-        <h2 id="title">Flight Search</h2>
-        <label class="DepLabel">Departure</label>
-        <select id="flight-from" name="Flight from">
-=======
-<?php require_once 'include/header.php'; ?>
-<?php require_once ('controller/home_controller.php'); ?>
-
-    <div class="banner">
-        <img class="banner-image" src="image/fly-mo.jpg">
-    </div>
 
     <div class="booking">
         <form  action="table.php" method="post">
@@ -60,7 +35,6 @@
             <div>
                 <br><a href="javascript:$('body').css({'zoom':parseFloat($('body').css('zoom'))+0.1})">Zoom in</a><br>
                 <br><a href="javascript:$('body').css({'zoom':parseFloat($('body').css('zoom'))-0.1})">Zoom out</a></div>
-
             <div id="map">
 
 
